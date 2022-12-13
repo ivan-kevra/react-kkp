@@ -1,0 +1,10 @@
+.body {
+    display: flex;
+    gap: 10px;
+}
+.on {
+    background-color: green
+}
+.off {
+    background-color: red;
+}
