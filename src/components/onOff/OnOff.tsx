@@ -2,18 +2,19 @@ import React from 'react';
 
 type PropsType = {
     on: boolean
-    setOn: (on: boolean) => void
+    onChange: (on: boolean) => void
 }
-const OnOff = (props: PropsType) => {
+export const OnOff = (props: PropsType) => {
 
-    const onClicked = () => props.setOn(true)
-    const offClicked = () => props.setOn(false)
+    const onClicked = () => props.onChange(true)
+    const offClicked = () => props.onChange(false)
 
     const onStyle = {
         width: '30px',
         height: '20px',
+        borderRadius: '5px',
         border: '1px solid black',
-        display: 'inline',
+        display: 'inline-block',
         padding: '2px',
         backgroundColor: props.on ? 'green' : ''
     }
@@ -47,4 +48,3 @@ const OnOff = (props: PropsType) => {
     );
 };
 
-export default OnOff;
