@@ -1,4 +1,5 @@
 import React from "react";
+import {Star} from "./star/Star";
 
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
 
@@ -19,17 +20,3 @@ export const Rating = (props: RatingPropsType) => {
     )
 }
 
-type StarPropsType = {
-    selected: boolean
-    value: RatingValueType
-    onClick: (value: RatingValueType) => void
-}
-const Star = (props: StarPropsType) => {
-
-    const setRatingHandler = () => {
-        props.onClick(props.value)
-    }
-
-    return <span onClick={setRatingHandler}>{props.selected ? <b>Star </b> : 'Star '}</span>
-
-}

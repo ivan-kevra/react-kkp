@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import {Rating, RatingValueType} from "./components/rating/Rating";
 import {Accordion} from "./components/accordion/Accordion";
-import {OnOff} from "./components/onOff/OnOff";
+import OnOff from "./components/onOff/OnOff";
 
 
 const App = () => {
@@ -18,10 +18,8 @@ const App = () => {
     return (
         <div className={'App'}>
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            <Accordion title={'Menu'} collapsed={accordionCollapsed} onChange={toggleCollapsed} items={[]}
-                       onClick={() => {
-                       }} color={''}/>
-            <OnOff on={on} onChange={setOn}/>
+            <Accordion title={'Menu'} collapsed={accordionCollapsed} onClick={toggleCollapsed}/>
+            <OnOff on={on} onClick={setOn}/>
 
         </div>
     );

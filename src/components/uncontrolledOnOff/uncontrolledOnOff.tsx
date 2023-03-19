@@ -2,11 +2,10 @@ import React, {useState} from 'react';
 
 type PropsType = {
     onChange: (on: boolean) => void
-    defaultOn: boolean
 }
 const UncontrolledOnOff = (props: PropsType) => {
 
-    const [on, setOn] = useState(props.defaultOn ? props.defaultOn : false)
+    const [on, setOn] = useState(true)
 
     const onClicked = () => {
         setOn(true)

@@ -1,32 +1,29 @@
-import React, {useState} from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {OnOff} from "./OnOff";
+import {ComponentMeta, ComponentStory} from "@storybook/react";
 import {action} from "@storybook/addon-actions";
+import OnOff from "./OnOff";
+import {useState} from "react";
 
 export default {
-    title: 'components/OnOff',
+    title: 'Components/OnOff',
     component: OnOff,
 } as ComponentMeta<typeof OnOff>;
 
-const callback = action('on or off clicked')
+const Template: ComponentStory<typeof OnOff> = (args) => <OnOff {...args} />;
 
-const Template: ComponentStory<typeof OnOff> = (args) => <OnOff {...args}  />;
-
-export const OnMode = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
+export const OnMode = Template.bind({})
 OnMode.args = {
     on: true,
-    onChange: callback
-};
-export const OffMode = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
+    onClick: action('change onOff mode was clicked')
+}
+
+export const OffMode = Template.bind({})
 OffMode.args = {
     on: false,
-    onChange: callback
-};
-
-
-export const SetOnOff = () => {
-    const [value, setValue] = useState<boolean>(true)
-    return <OnOff on={value} onChange={setValue}/>
+    onClick: action('change onOff mode was clicked')
 }
+
+export const SetOnMode = () => {
+    const [on, setOn] = useState<boolean>(true)
+    return <OnOff on={on} onClick={setOn}/>
+}
+

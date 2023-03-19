@@ -1,56 +1,45 @@
-import React, {useState} from 'react';
-import {ComponentStory, ComponentMeta} from '@storybook/react';
-
-import {Rating, RatingValueType} from './Rating';
+import {ComponentMeta, ComponentStory} from "@storybook/react";
+import {Rating, RatingValueType} from "./Rating";
 import {action} from "@storybook/addon-actions";
+import {useState} from "react";
 
 export default {
-    title: 'components/Rating stories',
+    title: 'Components/Rating',
     component: Rating,
 } as ComponentMeta<typeof Rating>;
 
-const callback = action('rating was changed')
+const Template: ComponentStory<typeof Rating> = (args) => <Rating {...args} />;
 
-const Template: ComponentStory<typeof Rating> = (args) => <Rating {...args}  />;
-
-export const EmptyRating = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
+export const EmptyRating = Template.bind({})
 EmptyRating.args = {
     value: 0,
-    onClick: callback
-};
+    onClick: action('change rating button was clicked')
+}
 
-export const Rating1 = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
+export const Rating1 = Template.bind({})
 Rating1.args = {
-    value: 1,
-    onClick: callback
-};
-export const Rating2 = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Rating2.args = {
-    value: 2,
-    onClick: callback
-};
-export const Rating3 = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Rating3.args = {
-    value: 3,
-    onClick: callback
-};
-export const Rating4 = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Rating4.args = {
-    value: 4,
-    onClick: callback
-};
-export const Rating5 = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Rating5.args = {
-    value: 5,
-    onClick: callback
-};
+    value: 1
+}
 
+export const Rating2 = Template.bind({})
+Rating2.args = {
+    value: 2
+}
+
+export const Rating3 = Template.bind({})
+Rating3.args = {
+    value: 3
+}
+
+export const Rating4 = Template.bind({})
+Rating4.args = {
+    value: 4
+}
+
+export const Rating5 = Template.bind({})
+Rating5.args = {
+    value: 5
+}
 
 export const RatingChanging = () => {
     const [rating, setRating] = useState<RatingValueType>(3)
