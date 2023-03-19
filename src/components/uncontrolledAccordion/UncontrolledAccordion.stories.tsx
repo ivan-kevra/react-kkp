@@ -8,8 +8,8 @@ export default {
 
 const Template: ComponentStory<typeof UncontrolledAccordion> = (args) => <UncontrolledAccordion {...args} />;
 
-export const CollapsedAccordion = Template.bind({})
-CollapsedAccordion.args = {
+export const AccordionMode = Template.bind({})
+AccordionMode.args = {
     title: 'Uncontrolled Accordion',
 }
 

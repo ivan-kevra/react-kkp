@@ -11,9 +11,15 @@ const Template: ComponentStory<typeof UncontrolledOnOff> = (args) => <Uncontroll
 
 const callback = action('onOff change mode clicked')
 
-export const Rating = Template.bind({})
-Rating.args = {
-    onChange: callback
+export const OnMode = Template.bind({})
+OnMode.args = {
+    onChange: callback,
+    defaultValue: true
+}
+export const OffMode = Template.bind({})
+OffMode.args = {
+    onChange: callback,
+    defaultValue: false
 }
 
 
