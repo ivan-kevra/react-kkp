@@ -22,7 +22,7 @@ OffMode.args = {
     onClick: action('change onOff mode was clicked')
 }
 
-export const SetOnMode = () => {
+export const ModeChanging = () => {
     const [on, setOn] = useState<boolean>(true)
     return <OnOff on={on} onClick={setOn}/>
 }
