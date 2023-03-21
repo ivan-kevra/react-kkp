@@ -1,7 +1,6 @@
 import {ComponentMeta} from "@storybook/react";
 import {Select} from "./Select";
 import {ItemType} from "../../App";
-import {action} from "@storybook/addon-actions";
 import {useState} from "react";
 
 export default {
@@ -17,21 +16,13 @@ const items: Array<ItemType> = [
 
 export const WithValue = () => {
     const [value, setValue] = useState('2')
-
-    return (
-        <>
-            <Select onChange={setValue} items={items} value={value}/>
-        </>
-    )
+    return <Select onChange={setValue} items={items} value={value}/>
 }
 
 
 export const WithoutValue = () => {
     const [value, setValue] = useState(null)
-    return (
-        <>
-            <Select onChange={setValue} items={items} value={value}/>
-        </>
-    )
+    return <Select onChange={setValue} items={items} value={value}/>
+
 }
 
