@@ -2,8 +2,9 @@ import React from "react";
 
 type AccordionTitlePropsType = {
     title: string
-    onClick: () => void
+    onClick: (value: any) => void
     color?: string
+
 }
 export const AccordionTitle = (props: AccordionTitlePropsType) => {
     return <h3 style={{color: props.color ? props.color : 'black'}}

@@ -1,14 +1,22 @@
 import React from "react";
-import {UserType} from "../../../App";
+import {ItemType} from "../../../App";
 
 type AccordionBodyPropsType = {
-    users: Array<UserType>
+    users: Array<ItemType>
+    onItemClick: (value: any) => void
 }
 
 export const AccordionBody = (props: AccordionBodyPropsType) => {
+
     return <ul>
         {props.users
-            ? <span>{props.users.map((user) => <li>{user.user}</li>)}</span>
+            ? <span>
+                {props.users.map((user) => {
+                        const setUserHandler = () => props.onItemClick(user.value)
+                        return <li key={user.value} onClick={setUserHandler}>{user.title}</li>
+                    }
+                )}
+              </span>
             : <li>empty list</li>}
     </ul>
 }

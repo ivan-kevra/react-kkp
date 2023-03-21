@@ -31,15 +31,15 @@ export default {
 
 const Template: ComponentStory<typeof Accordion> = (args) => <Accordion {...args} />;
 const callback = action('change accordion mode was clicked')
-const itemCallback = action('change accordion mode was clicked')
+const itemCallback = action('user was clicked')
 const callbackProps = {
     onClick: callback,
     onItemClick: itemCallback,
 }
 const users = [
-    {user: 'Dimych', userId: 1},
-    {user: 'Valera', userId: 2},
-    {user: 'Viktor', userId: 3}
+    {name: 'Dimych', id: 1},
+    {name: 'Valera', id: 2},
+    {name: 'Viktor', id: 3}
 ]
 
 export const MenuCollapsedMode = Template.bind({})
@@ -49,6 +49,7 @@ MenuCollapsedMode.args = {
     collapsed: true,
     users: []
 }
+
 export const UsersUnCollapsedMode = Template.bind({})
 UsersUnCollapsedMode.args = {
     ...callbackProps,
@@ -58,15 +59,15 @@ UsersUnCollapsedMode.args = {
 }
 
 export const ChangeCollapseMode: ComponentStory<typeof Accordion> = (args) => {
-    const [collapsed, setCollapsed] = useState<boolean>(false)
-    return <Accordion  {...args} collapsed={collapsed} onClick={() => setCollapsed(!collapsed)}/>
+    const [value, setValue] = useState<boolean>(false)
+    return <Accordion  {...args} collapsed={value} onClick={() => setValue(!value)}/>
 }
 
 ChangeCollapseMode.args = {
+    ...callbackProps,
     title: 'DEFAULT',
     collapsed: false,
     users,
-    onItemClick: itemCallback
 }
 
 
