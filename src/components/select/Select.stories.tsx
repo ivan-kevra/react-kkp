@@ -19,7 +19,6 @@ export const WithValue = () => {
     return <Select onChange={setValue} items={items} value={value}/>
 }
 
-
 export const WithoutValue = () => {
     const [value, setValue] = useState(null)
     return <Select onChange={setValue} items={items} value={value}/>

@@ -55,7 +55,7 @@ UsersUnCollapsedMode.args = {
     ...callbackProps,
     title: 'Users',
     collapsed: false,
-    users
+    // users
 }
 
 export const ChangeCollapseMode: ComponentStory<typeof Accordion> = (args) => {
@@ -67,7 +67,7 @@ ChangeCollapseMode.args = {
     ...callbackProps,
     title: 'DEFAULT',
     collapsed: false,
-    users,
+    // users,
 }
 
 

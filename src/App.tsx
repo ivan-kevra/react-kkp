@@ -36,7 +36,7 @@ const App = () => {
             {/*           }}*/}
             {/*/>*/}
             {/*<OnOff on={on} onClick={setOn}/>*/}
-            <Select items={users}/>
+            {/*<Select items={users} />*/}
 
         </div>
     );

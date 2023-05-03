@@ -45,6 +45,10 @@ export const Select = (props: SelectPropsType) => {
             }
 
         }
+        if (!selectedItem) {
+            props.onChange(props.items[0].value)
+        }
+
 
         if (event.key === 'Enter' || event.key === 'Escape') {
             setActive(false)
@@ -53,7 +57,7 @@ export const Select = (props: SelectPropsType) => {
     }
 
     return (
-        <>
+        <div>
             <div className={style.select} onKeyUp={onKeyUp} tabIndex={0}>
                 <span className={style.main} onClick={toggleItems}>
                     {selectedItem && selectedItem.title}</span>
@@ -67,7 +71,7 @@ export const Select = (props: SelectPropsType) => {
                         >{item.title}</div>)}
                     </div>}
             </div>
-        </>
+        </div>
 
 
     );
