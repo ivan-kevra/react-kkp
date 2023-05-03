@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from "react";
+import React, {useCallback, useMemo, useState} from "react";
 import {Select} from "../components/select/Select";
 
 
@@ -96,6 +96,39 @@ export const SelectMemo = () => {
 
     </div>
 }
+
+export const LikeUseCallBack = () => {
+    console.log('LikeUseCallBack')
+    const [counter, setCounter] = useState(0)
+    const [books, setBooks] = useState(['React', 'HTML', 'CSS'])
+
+    const addBook = useCallback(() => {
+        setBooks([...books, 'Angular' + new Date().getTime()])
+    }, [books])
+
+    const newArray = useMemo(() => {
+        return books.filter((book) => book.toLowerCase().indexOf('a') > -1)
+    }, [books])
+
+
+    return <>
+        <button onClick={() => setCounter(counter + 1)}>+</button>
+        {counter}
+        <Books books={newArray} addBook={addBook}></Books>
+    </>
+}
+
+type BooksPropsType = {
+    books: Array<string>
+    addBook: () => void
+}
+const Books = React.memo((props: BooksPropsType) => {
+    console.log('books')
+    return <div>
+        <button onClick={() => props.addBook()}>add book</button>
+        {props.books.map((book, index) => <div key={index}>{book}</div>)}</div>
+})
+
 
 export default {
     title: 'useMemo demo',
