@@ -23,7 +23,7 @@ type AccordionPropsType = {
     value?: any
     color: string
 }
-export const Accordion = (props: AccordionPropsType) => {
+export const Accordion = React.memo((props: AccordionPropsType) => {
     const clickUserHandler = () => props.onItemClick(props.value)
 
     return <div>
@@ -31,7 +31,7 @@ export const Accordion = (props: AccordionPropsType) => {
                         color={props.color}/>
         {!props.collapsed && <AccordionBody users={props.users} onItemClick={clickUserHandler}/>}
     </div>
-}
+})
 
 
 

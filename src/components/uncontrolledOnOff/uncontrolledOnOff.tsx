@@ -4,7 +4,7 @@ type PropsType = {
     onChange: (on: boolean) => void
     defaultValue?: boolean
 }
-const UncontrolledOnOff = (props: PropsType) => {
+const UncontrolledOnOff = React.memo((props: PropsType) => {
 
     const [on, setOn] = useState(props.defaultValue ? props.defaultValue : false)
 
@@ -53,6 +53,6 @@ const UncontrolledOnOff = (props: PropsType) => {
             <div style={indicatorStyle}></div>
         </div>
     );
-};
+});
 
 export default UncontrolledOnOff;

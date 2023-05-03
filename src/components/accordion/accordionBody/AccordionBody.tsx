@@ -6,7 +6,7 @@ type AccordionBodyPropsType = {
     onItemClick: (value: any) => void
 }
 
-export const AccordionBody = (props: AccordionBodyPropsType) => {
+export const AccordionBody = React.memo((props: AccordionBodyPropsType) => {
 
     return <ul>
         {props.users
@@ -19,4 +19,4 @@ export const AccordionBody = (props: AccordionBodyPropsType) => {
               </span>
             : <li>empty list</li>}
     </ul>
-}
+})
