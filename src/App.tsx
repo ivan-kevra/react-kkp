@@ -5,12 +5,13 @@ import {Accordion} from "./components/accordion/Accordion";
 import OnOff from "./components/onOff/OnOff";
 import {string} from "prop-types";
 import {Select} from "./components/select/Select";
+import {UncontrolledAccordion} from "./components/uncontrolledAccordion/UncontrolledAccordion";
 
 export type ItemType = {
     title: string,
     value: any
 }
-const App = () => {
+export const App = () => {
 
     const [ratingValue, setRatingValue] = useState<RatingValueType>(3)
     const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
@@ -27,27 +28,16 @@ const App = () => {
 
     return (
         <div className={'App'}>
-            {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
-            {/*<Accordion title={'Menu'}*/}
-            {/*           collapsed={accordionCollapsed}*/}
-            {/*           onClick={toggleCollapsed}*/}
-            {/*           users={users} color={''}*/}
-            {/*           onItemClick={() => {*/}
-            {/*           }}*/}
-            {/*/>*/}
-            {/*<OnOff on={on} onClick={setOn}/>*/}
-            {/*<Select items={users} />*/}
+            <UncontrolledAccordion title={'Users'}/>
 
         </div>
     );
 }
 
-export default App;
 
-
-type PageTitlePropsType = {
-    title: string
-}
-const PageTitle = (props: PageTitlePropsType) => {
-    return <h1>{props.title}</h1>
-}
+// type PageTitlePropsType = {
+//     title: string
+// }
+// const PageTitle = (props: PageTitlePropsType) => {
+//     return <h1>{props.title}</h1>
+// }

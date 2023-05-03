@@ -43,17 +43,13 @@ export const Select = (props: SelectPropsType) => {
             if (!selectedItem) {
                 props.onChange(props.items[0].value)
             }
-
         }
         if (!selectedItem) {
             props.onChange(props.items[0].value)
         }
-
-
         if (event.key === 'Enter' || event.key === 'Escape') {
             setActive(false)
         }
-
     }
 
     return (
