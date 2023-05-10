@@ -14,12 +14,15 @@ export const Example1 = () => {
 
     useEffect(() => {
         console.log('every render')
+        document.title = counter.toString()
     },)
     useEffect(() => {
         console.log('only first render = analog componentDidMount')
+        document.title = counter.toString()
     }, [])
     useEffect(() => {
         console.log('first render and very counter changed')
+        document.title = counter.toString()
     }, [counter])
 
     return <>
@@ -30,7 +33,26 @@ export const Example1 = () => {
     </>
 }
 
+
 export default {
     title: 'useEffect demo',
     component: Example1
+}
+
+export const SetTimeOutExample = () => {
+
+    const [time, setTime] = useState(new Date());
+
+
+    useEffect(() => {
+        setInterval(() => {
+            setTime(new Date())
+        }, 1000)
+    }, [time])
+
+
+    return <div>
+        <h1>Текущее время:</h1>
+        <h2>{time.toLocaleTimeString()}</h2>
+    </div>
 }
