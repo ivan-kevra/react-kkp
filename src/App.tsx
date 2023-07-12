@@ -22,6 +22,9 @@ export const App = () => {
         {title: 'Viktor', value: 3},
     ]
 
+
+
+
     const toggleCollapsed = () => {
         setAccordionCollapsed(!accordionCollapsed)
     }
